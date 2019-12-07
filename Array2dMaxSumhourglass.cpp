@@ -32,7 +32,10 @@ int main(){
     // Create a vector containing n  vectors of size n
     
     vector<vector<int> > vec( n , vector<int> (m));  
-    int ans=hourglassSum(vec);
+  int ans=hourglassSum(vec);
+  if (ans == -1) 
+        cout << "Not possible" << endl; 
+   else
     cout<<ans;
     return 0;
     }
