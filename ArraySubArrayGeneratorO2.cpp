@@ -1,4 +1,6 @@
-/* Approach: We use two pointers start and end to maintain the starting and ending point of the array and follow the steps given below:
+/* 
+RECURSIVE PROGRAM to generate subarrays  O(n^2)
+Approach: We use two pointers start and end to maintain the starting and ending point of the array and follow the steps given below:
 
 Stop if we have reached the end of the array
 Increment the end index if start has become greater than end
@@ -16,7 +18,7 @@ void subArray(int arr[],int start,int end,int len)
     }
     else if(start>end)
     {
-        end++;
+        
         subArray(arr,0,end+1,len);
     }
     else{
