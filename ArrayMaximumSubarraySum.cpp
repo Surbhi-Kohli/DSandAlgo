@@ -25,6 +25,35 @@ Sample Output
 15*/
 #include<iostream>
 using namespace std;
+void kadaneAlgo(int arr[],int n)
+{
+    int left=0,leftO=0,right=0,rightO=0;
+    int curr_sum=arr[0];
+    int max_sum=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        if(curr_sum+arr[i]>arr[i])
+        {
+            curr_sum+=arr[i];
+            right=i;
+        }
+        else{
+            curr_sum=arr[i];
+            right=i;
+            left=i;
+        }
+      
+        if(curr_sum>max_sum)
+        {  max_sum=max(curr_sum,max_sum);
+           
+            leftO=left;
+            rightO=right;
+        }
+      //  cout<<max_sum<<endl;
+    }
+    cout<<max_sum<<" left index-> "<<leftO<<"  rightIndex-> "<<rightO;
+    
+}
 int main() {
     int tc;
     cin>>tc;
@@ -35,16 +64,11 @@ int main() {
          int *arr=new int[n];
          for(int j=0;j<n;j++)
          cin>>arr[j];
-         
-         int csum=arr[0],maxsum=arr[0];
-     for(int j=1;j<n;j++)
-     {
-         csum=(arr[j]>csum+arr[j])?arr[j]:(csum+arr[j]);
-        
-         maxsum=(csum>maxsum)?csum:maxsum;
-     }
-     cout<<maxsum<<endl;
-    }
+	      kadaneAlgo(arr, n); 
+  
+    }   
+       
+    
     
 	return 0;
 }
