@@ -1,3 +1,10 @@
+/* Approach: We use two pointers start and end to maintain the starting and ending point of the array and follow the steps given below:
+
+Stop if we have reached the end of the array
+Increment the end index if start has become greater than end
+Print the subarray from index start to end and increment the starting index  */
+
+
 #include <iostream>
 using namespace std;
 
