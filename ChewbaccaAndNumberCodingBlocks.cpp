@@ -18,7 +18,7 @@ if(a[i]=='9')
 {
    i++;
 }
-for(;a[i]!='\0';i++)
+for(;a[i]!='\0';i++)//chr arrays are null terminated
 {
     int digit=a[i]-'0';
    if(digit>=5)
