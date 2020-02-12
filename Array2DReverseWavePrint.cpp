@@ -42,7 +42,7 @@ void wavePrint(vector<vector<int>> arr,int row,int col)
                 cout << arr[i][j] << " ";   
             
             wave = 0; 
-            j--; 
+           
         } 
         else { 
               
@@ -53,8 +53,9 @@ void wavePrint(vector<vector<int>> arr,int row,int col)
                 cout << arr[i][j] << " "; 
               
             wave = 1; 
-            j--; 
+           
         } 
+	     j--; 
     } 
     
 }
