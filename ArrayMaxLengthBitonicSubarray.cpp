@@ -22,6 +22,26 @@ Sample Output
 4
 Explanation
 ForMaximum length = 4, 78, 90, 45, 23
+
+
+SOLUTION: O(n) time and space
+
+Let us consider the array {12, 4, 78, 90, 45, 23} to understand the soultion.
+1) Construct an auxiliary array inc[] from left to right such that inc[i] contains length of the nondecreaing subarray ending at arr[i].
+For A[] = {12, 4, 78, 90, 45, 23}, inc[] is {1, 1, 2, 3, 1, 1}
+
+2) Construct another array dec[] from right to left such that dec[i] contains length of nonincreasing subarray starting at arr[i].
+For A[] = {12, 4, 78, 90, 45, 23}, dec[] is {2, 1, 1, 3, 2, 1}.
+
+3) Once we have the inc[] and dec[] arrays, all we need to do is find the maximum value of (inc[i] + dec[i] – 1).
+For {12, 4, 78, 90, 45, 23}, the max value of (inc[i] + dec[i] – 1) is 5 for i = 3.
+
+Extreme Examples
+1) A[] = {10}, the single element is bitnoic, so output is 1.
+
+2) A[] = {10, 20, 30, 40}, the complete array itself is bitonic, so output is 4.
+
+3) A[] = {40, 30, 20, 10}, the complete array itself is bitonic, so output is 4.
 */
 #include<iostream>
 using namespace std;
