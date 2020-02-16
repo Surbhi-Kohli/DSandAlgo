@@ -26,9 +26,9 @@ int main() {
 	// your code goes here
    	int n;
 	cin>>n;
-	int p[n]={0};
-	prime_sieve(p,n);
-	for(int i=0;i<n;i++)
+	int p[n+1]={0};
+	prime_sieve(p,n+1);
+	for(int i=0;i<=n;i++)
 	{
 	    if(p[i]==1)
 	    cout<<i<<" ";
