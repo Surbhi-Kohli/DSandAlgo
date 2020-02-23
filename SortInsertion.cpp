@@ -1,4 +1,15 @@
 /*
+Insertion Sort-
+Best Case Complexity - O(N)->.Case in which the first remaining element of the input is only compared with the right-most element of the
+sorted subsection of array.
+
+Worst Case- O(n^2);
+Auxiliary Space - O(1) [Insertion Sort is in place i.e only requiresconstant amoumt O(1) of additional memory]
+
+
+Boundary Case:Insertion Sort takes minimum time to sort if elements are sorted in reverse order.And it takes minimum time(order of N) 
+                when elements are aalready sorted.
+
 Given an array A of size N , write a function that implements insertion sort on the array. Print the elements of sorted array.
 
 Input Format
