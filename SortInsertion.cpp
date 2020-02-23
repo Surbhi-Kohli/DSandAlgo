@@ -10,10 +10,12 @@ Auxiliary Space - O(1) [Insertion Sort is in place i.e only requiresconstant amo
 Boundary Case:Insertion Sort takes minimum time to sort if elements are sorted in reverse order.And it takes minimum time(order of N) 
                 when elements are aalready sorted.
 
+
 Given an array A of size N , write a function that implements insertion sort on the array. Print the elements of sorted array.
 
 Input Format
-First line contains a single integer N denoting the size of the array. Next line contains N space seperated integers where ith integer is the ith element of the array.
+First line contains a single integer N denoting the size of the array. Next line contains
+N space seperated integers where ith integer is the ith element of the array.
 
 Constraints
 1 <= N <= 1000
