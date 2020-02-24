@@ -14,34 +14,25 @@ Auxiliary Space: O(1)
 The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation.
 */
 
-#include <iostream>
+#include<iostream>
 using namespace std;
-
 int main() {
-int n;
-cin>>n;
-int arr[n];
-for(int i=0;i<n;i++)
-{
-    cin>>arr[i];
-}
-int small=arr[0];
-int pos=0;
-for(int i=0;i<6;i++)
-{
-      small=arr[i];
-      pos=i;
-      for(int j=i+1;j<6;j++)
-      { 
-          if(arr[j]<small)
-          {
-              small=arr[j];
-              pos=j;
-          }
-      }
-       swap(arr[i],arr[pos]);
-}
-for(int i=0;i<6;i++)
-cout<<arr[i]<<" ";
+  int n;
+  cin>>n;
+  int pos;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  cin>>arr[i];
+  for(int i=0;i<n;i++)
+  {pos=i;
+    for(int j=i+1;j<n;j++)
+    {
+      if(arr[j]<arr[pos])
+      pos=j;
+    }
+    swap(arr[i],arr[pos]);
+  }
+   for(int k=0;k<n;k++)
+  cout<<arr[k]<<endl;
 	return 0;
 }
