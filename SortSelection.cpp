@@ -10,6 +10,15 @@ In every iteration of selection sort, the minimum element (considering ascending
 subarray is picked and moved to the sorted subarray.
 Time Complexity: O(n^2) as there are two nested loops.
 
+Is Slection sort stable- NO
+Input : 4A 5 3 2 4B 1
+Output : 1 2 3 4B 4A 5
+Selection sort works by finding the minimum element and then inserting it in its correct
+position by swapping with the element which is in the position of this minimum element. This is what makes it unstable.
+Swapping might impact in pushing a key(let’s say A) to a position greater than the key(let’s say B) which are equal keys. 
+which makes them out of desired order.In the above example 4A was pushed after 4B and after
+complete sorting this 4A remains after this 4B. Hence resulting in unstability.
+
 Auxiliary Space: O(1)
 The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation.
 */
