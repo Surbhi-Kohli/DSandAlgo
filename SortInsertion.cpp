@@ -4,12 +4,18 @@ Best Case Complexity - O(N)->.Case in which the first remaining element of the i
 sorted subsection of array.
 
 Worst Case- O(n^2);
-Auxiliary Space - O(1) [Insertion Sort is in place i.e only requiresconstant amoumt O(1) of additional memory]
+Auxiliary Space - O(1) [Insertion Sort is in place i.e only requires constant amoumt O(1) of additional memory]
+So insertion sort is in-place 
 
 
 Boundary Case:Insertion Sort takes minimum time to sort if elements are sorted in reverse order.And it takes minimum time(order of N) 
-                when elements are aalready sorted.
+                when elements are already sorted.
 
+Is insertion sort stable- Yes
+Stability of a sorting algo-A sorting algo is said to be stable if 2 objects with equal keys appear in same order in sorted output as 
+they appear in the input array to be sorted
+
+Which other sorting algos are stable-Bubble sort,Insertion Sort,Merge Sort,Count Sort
 
 Given an array A of size N , write a function that implements insertion sort on the array. Print the elements of sorted array.
 
