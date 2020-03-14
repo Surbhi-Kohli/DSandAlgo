@@ -1,6 +1,8 @@
 /*
 Maximum length substring having all same characters after k changes
-We have a string of length n, which consist only UPPER and LOWER CASE characters and we have a number k (always less than n and greater than 0). We can make at most k changes in our string such that we can get a sub-string of maximum length which have all same characters.
+We have a string of length n, which consist only UPPER and LOWER CASE characters and we have a number k 
+(always less than n and greater than 0). We can make at most k changes in our string such that we 
+can get a sub-string of maximum length which have all same characters.
 
 Examples:
 
