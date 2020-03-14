@@ -17,7 +17,9 @@ Input : n = 6 k = 4
        str = HHHHHH
 Output : maximum length=6
 which will be(HHHHHH)
-We check for each character of English alphabet (both upper and lower cases one by one). We are basically looking for maximum length of sub-string that can be formed by each character and whichever character will form the sub-string of maximum length then that length will be our answer.
+We check for each character of English alphabet (both upper and lower cases one by one). We are basically looking
+for maximum length of sub-string that can be formed by each character and whichever character will form the 
+sub-string of maximum length then that length will be our answer.
 
 */
 // C++ program to find maximum length equal 
