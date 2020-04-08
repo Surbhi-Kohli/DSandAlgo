@@ -26,9 +26,25 @@ its left child is located at 2*k index
 its right child is located at 2*k+1. index
 its parent is located at k/2 index
 
-So the information represented by the Binary tree can be represented by  array for a complete binary tree.We use array notation b'coz if we want to
-1. insert an element-We add it at last index of array and then heapify the array to maintain the heap property (O(logN))
-2. Get least value or max value element,We get it by retrieving the 2nd element of array O(N).
+So the information represented by the Binary tree can be represented by array for a complete binary tree.We use array
+notation b'coz if we want to
+
+1.Insert an element-We add it at last index of array and then heapify the array to maintain the heap property (O(logN)):
+
+The new element is initially appended to the end of the heap (as the last element of the array). The heap property
+is repaired by comparing the added element with its parent and moving the added element up 
+a level (swapping positions with the parent). This process is called "percolation up". 
+The comparison is repeated until the parent is larger than or equal to the percolating element.
+The worst-case runtime of the algorithm is O(log n), since we need at most one swap on each
+level of a heap on the path from the inserted node to the root (As no of levels =log n)
+
+2.Get least value or max value element,We get it by retrieving the 2nd element of array O(N).
+
+3.DeleteMin/DeleteMax
+The minimum element can be found at the root, which is the first element of the array. We remove the root and
+replace it with the last element of the heap and then restore the heap property by 
+percolating down. Similar to insertion, the worst-case runtime is O{log n).
+
 */
 #include <iostream>
 #include<vector>
