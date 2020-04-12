@@ -2,8 +2,8 @@
 #include<climits>
 #include<vector>
 using namespace std;
-void downheapify(vector<int> &arr,int i)
-{
+void downheapify(vector<int> &arr,int i)//it is important to have alias of arr ,so that we work on the 
+{	                                 //   same vector sent n don't create a copy of it.
     int left=2*i+1;
     int right=2*i+2;
     int temp=i;
@@ -21,7 +21,7 @@ void downheapify(vector<int> &arr,int i)
     swap(arr[i],arr[temp]);
     downheapify(arr,temp);
 }
-void deleteNodeOtherThanRoot(vector<int> &arr,int del)
+void deleteNodeOtherThanRoot(vector<int> &arr,int del)//alias of arr
 {
    
     for(int i=0;i<arr.size();i++)
