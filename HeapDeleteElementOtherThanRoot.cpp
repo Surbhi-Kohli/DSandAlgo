@@ -34,13 +34,13 @@ void deleteNodeOtherThanRoot(vector<int> &arr,int del)//alias of arr
         }
         
     }
-     for(int i=arr.size()-1;i>=0;i--)//can start loop from (arr.size()-1)/2
+     for(int i=arr.size()-1;i>=0;i--)//can start loop from arr.size()/2-1
       downheapify(arr,i);
      
  
     swap(arr[0],arr[arr.size()-1]);
     arr.pop_back();
-     for(int i=arr.size()-1;i>=0;i--)//can start loop from (arr.size()-1)/2
+     for(int i=arr.size()-1;i>=0;i--)//can start loop from arr.size()/2-1
       downheapify(arr,i);
       
      
@@ -58,7 +58,7 @@ int main() {
 	    
 	}
 	cin>>del; //20
-	 for(int i=arr.size()-1;i>=0;i--)//can start loop from (arr.size()-1)/2
+	 for(int i=arr.size()-1;i>=0;i--)//can start loop from arr.size()/2-1
     downheapify(arr,i);
 	deleteNodeOtherThanRoot(arr,del);
 	 for(int i=0;i<arr.size();i++)
