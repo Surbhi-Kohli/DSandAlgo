@@ -1,21 +1,25 @@
 /*
-here we will heapify an array by calling max Heapify.But here we have a recursive implementation of max heapify
+here we will heapify an array by calling max downHeapify.But here we have a recursive implementation of max downheapify
 */
 #include <iostream>
 using namespace std;
-void maxHeapify(int arr[],int i,int n)
+void maxdownHeapify(int arr[],int i,int n)
 {
     int left=2*i;
     int right=2*i+1;
     int temp=i;
    
+	if(left>n && right>n)
+		return;
+	
    if(left<n && arr[left]>arr[temp])
      temp=left;
      
      if(right<n&& arr[right]>arr[temp])
      temp=right;
     
-    
+     if(temp==i)
+      return;
     if(temp!=i)
     {  swap(arr[i],arr[temp]);
         i=temp;
@@ -36,7 +40,7 @@ int main() {
   }
   for(int i=(n/2)-1;i>=0;i--)
   {
-      maxHeapify(arr,i,n);
+      maxdownHeapify(arr,i,n);
   }
   for(int i=0;i<n;i++)
   cout<<arr[i]<<" "; //16 14 9 10 8 1 4 2 3 7 
