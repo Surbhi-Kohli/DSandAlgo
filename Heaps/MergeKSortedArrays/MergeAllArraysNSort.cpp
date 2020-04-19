@@ -8,7 +8,7 @@ Traverse the matrix from start to end and insert all the elements in output arra
 Sort and print the output array.
 
 Complexity Analysis:
-Time Complexity :O(n*k).
+Time Complexity :O(n*kLog(n*k)).
 Traversing the matrix requires O(n*k) time.
 Space Complexity :O(n*k), The output array is of size n*k.
 */
