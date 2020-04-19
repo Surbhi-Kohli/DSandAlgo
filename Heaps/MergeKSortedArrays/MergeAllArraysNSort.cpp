@@ -1,4 +1,17 @@
-// C++ program to merge k sorted arrays of size n each. 
+// C++ program to merge k sorted arrays of size n each.
+/*
+Naive Approach: The very naive method is to create an output array of size n * k and then copy all the elements into the output array followed by sorting.
+
+Algorithm:
+Create a output array of size n * k.
+Traverse the matrix from start to end and insert all the elements in output array.
+Sort and print the output array.
+
+Complexity Analysis:
+Time Complexity :O(n*k).
+Traversing the matrix requires O(n*k) time.
+Space Complexity :O(n*k), The output array is of size n*k.
+*/
 #include<bits/stdc++.h> 
 using namespace std; 
 #define n 4 
@@ -50,3 +63,10 @@ int main()
 
 	return 0; 
 } 
+/*
+Output:
+Merged array is 
+1 2 6 9 12 20 23 34 34 90 1000 2000
+
+
+*/
