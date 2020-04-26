@@ -1,12 +1,17 @@
 /*
-Dean of MAIT is going to visit Hostels of MAIT. As you know that he is a very busy person so he decided to visit only first "K" nearest Hostels. Hostels are situated in 2D plane. You are given the coordinates of hostels and you have to answer the Rocket distance of Kth nearest hostel from origin ( Dean's place ) .
+Dean of MAIT is going to visit Hostels of MAIT. As you know that he is a very busy person so he decided to 
+visit only first "K" nearest Hostels. Hostels are situated in 2D plane. You are given the coordinates of hostels 
+and you have to answer the Rocket distance of Kth nearest hostel from origin ( Dean's place ) .
 
 Input Format
 First line of input contains Q Total no. of queries and K There are two types of queries:
 
-first type : 1 x y For query of 1st type, you came to know about the co-ordinates ( x , y ) of newly constructed hostel. second type : 2 For query of 2nd type, you have to output the Rocket distance of Kth nearest hostel till now.
+first type : 1 x y For query of 1st type, you came to know about the co-ordinates ( x , y ) of
+newly constructed hostel. second type : 2 For query of 2nd type, you have to output the Rocket
+distance of Kth nearest hostel till now.
 
-The Dean will always stay at his place ( origin ). It is gauranted that there will be atleast k queries of type 1 before first query of type 2.
+The Dean will always stay at his place ( origin ). It is gauranted that there will be atleast k 
+queries of type 1 before first query of type 2.
 
 Rocket distance between two points ( x2 , y2 ) and ( x1 , y1 ) is defined as (x2 - x1)2 + (y2 - y1)2
 
@@ -36,9 +41,11 @@ Here , No of queries = n = 9 k = 3
 
 We have to print the kth distance from the hotel.
 
-We are calculating and storing the rocket distance here i.e. (x2-x1)^2 + (y2-y1)^2 … basically the cartesian distance but without the squareroot.
+We are calculating and storing the rocket distance here i.e. (x2-x1)^2 + (y2-y1)^2 … basically
+the cartesian distance but without the squareroot.
 
-First integer of each input defines the query type. 1 means take the coordinates input and 2 means display the kth distance so far.
+First integer of each input defines the query type. 1 means take the coordinates input and 2 
+means display the kth distance so far.
 
 Iteration 1 :
 First we get 1 10 10
@@ -93,7 +100,10 @@ Output : 98
 Approach
 The following problem can be easily solved by using heaps.
 For every query of type 1, insert elements until the size of the heap becomes 'k'.
-Then for every query of type 1 after reaching the size k for heap(max-heap) we will check if the current element is smaller than the root of the heap or not. If it is not smaller then we ignore it else we remove the root of the heap and push the new element in the heap. (What this will do is maintain a heap of size k which will contain k nearest coordinates for the dean) .
+Then for every query of type 1 after reaching the size k for heap(max-heap) we will check 
+if the current element is smaller than the root of the heap or not. If it is not smaller then 
+we ignore it else we remove the root of the heap and push the new element in the heap. (What this 
+will do is maintain a heap of size k which will contain k nearest coordinates for the dean) .
 For every query of type 2 just print the root of the heap.
 
 C++ Code:
