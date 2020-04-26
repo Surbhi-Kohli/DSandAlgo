@@ -60,7 +60,7 @@ A = { 162 , 200 }
 
 Iteration 3 :
 1 -8 -8
-Distance = (-8)^2 + (-8)^2 = 168
+Distance = (-8)^2 + (-8)^2 = 128
 A = { 128, 162 , 200 }
 
 Iteration 4 :
@@ -116,8 +116,7 @@ using namespace std;
 ll rocketDistance(ll x, ll y) {
     return x*x + y*y;
 }
-int main(int argc, char const *argv[])
-{
+int main(){
     int q, k, x, y, type;
     cin>>q>>k;
     priority_queue<ll> pq;
@@ -130,10 +129,12 @@ int main(int argc, char const *argv[])
                     pq.pop();
                     pq.push(rocketDistance(x, y));
                 }
-            } else {
+            }///end of condition if(pq.size()==k) 
+            else {
                 pq.push(rocketDistance(x, y));
-            }
-        } else {
+              }
+        }//end of condition if(type==1) 
+        else {
             cout<<pq.top()<<endl;
         }
     }
