@@ -1,0 +1,13 @@
+Criteria for analysis of sorting algorithms
+1. No. of comparisons  2. No. of swaps   3. Adaptive(Algo's behavior when an array is already sorted)
+4. Stable (order maintenance w.r.t duplicate elements)  5.Extra Memory -in Place
+
+Comparison Based Sorting Alogrithms:
+Bubble Sort,Selection Sort,Insertion Sort,Heap Sort,Merge Sort,Quick Sort,Tree Sort,Shell Sort
+Index Based Sorting Algorithms:
+Count Sort,Bucket/Bin Sort,Radix Sort
+
+O(n^2) Algorithms-Bubble Sort,Insertion Sort,Selection Sort
+O(nlogn) Algorithms:Heap Sort,Merge Sort,Quick Sort,Tree Sort
+O(n^3/2) Algorithms:Shell Sort
+O(n) Algorithms:Count Sort,Bucket/Bin Sort,Radix Sort
