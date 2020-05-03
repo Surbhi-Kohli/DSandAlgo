@@ -9,7 +9,10 @@ space than Merge Sort, which is why it is often preferred to Merge Sort.Using a 
 can further improve the time complexity of QuickSort.
 Using random pivoting we improve the expected or average time complexity to O (N log N). 
 The Worst Case complexity is still O ( N^2 ).
-
+In a non-randomized quick sort,the wost case occurs when the array is already sorted in  ascending/descending order.
+Complexity will be O(n^2) [Here ppartition happens at one end]
+best case complexity=O(nlogn) [When partition happens in the middle]
+Average case= O(nlogn)
 Given an array A, of N elements. Sort the array using quicksort algorithm.(Note : Use randomized quicksort,
 otherwise worst case will not pass).
 
