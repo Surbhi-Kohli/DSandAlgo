@@ -1,9 +1,11 @@
-#include<bits/stdc++.h> 
+#include<iostream> 
+#include<climits>//for INT_MIN
 using namespace std;
 
 int main() {
 
-	int n,left=0,right=0,currSum=INT_MIN,maxSum=INT_MIN;//we do INT_MIN so that if our maxSum is a -ve number ,then its valuee gets updated
+	int n,left=0,right=0,currSum=INT_MIN,maxSum=INT_MIN;//we do INT_MIN so that if our maxSum is a -ve number//
+	                                                     //,then its valuee gets updated
 	cin>>n;
 	int arr[n];
 	int cumSum[n+1]={0};
