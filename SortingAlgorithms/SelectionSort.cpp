@@ -24,24 +24,45 @@ Adaptive:No,Irrespective of whether the list is sorted or not ,its gonna take n^
 */
 
 #include<iostream>
+#include<climits>
 using namespace std;
+void selectionSort(int arr[],int n)
+{
+	
+	int pos=0;
+	int small=0;
+	for(int i=0;i<n;i++)
+	{
+	pos=i;
+	small=arr[i];
+      for(int j=i+1;j<n;j++)
+	  {
+		  if(arr[j]<small)
+		  {
+			  pos=j;
+			  small=arr[j];
+			 
+		  }
+	  }
+	  swap(arr[i],arr[pos]);
+	  
+	}
+
+	for(int i=0;i<n;i++)
+	{
+		cout<<arr[i]<<endl;
+	}
+
+}
 int main() {
-  int n;
-  cin>>n;
-  int pos;
-  int arr[n];
-  for(int i=0;i<n;i++)
-  cin>>arr[i];
-  for(int i=0;i<n;i++)
-  {pos=i;
-    for(int j=i+1;j<n;j++)
-    {
-      if(arr[j]<arr[pos])
-      pos=j;
-    }
-    swap(arr[i],arr[pos]);
-  }
-   for(int k=0;k<n;k++)
-  cout<<arr[k]<<endl;
+	int n;
+	cin>>n;
+	
+	int arr[n];
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	selectionSort(arr,n);
 	return 0;
 }
