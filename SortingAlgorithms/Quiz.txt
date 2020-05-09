@@ -1,0 +1,20 @@
+Which of the following is not true about comparison based sorting algorithms?
+A. The minimum possible time complexity of a comparison based sorting algorithm is O(nLogn) for a random input array
+B. Any comparison based sorting algorithm can be made stable by using position as a criteria when two elements are compared
+C. Counting Sort is not a comparison based sorting algortihm
+D. Heap Sort is not a comparison based sorting algorithm.
+Answer-D
+
+Which sorting algorithms is most efficient to sort string consisting of ASCII characters?
+A. Quick sort
+B. Heap sort
+C. Merge sort
+D. Counting sort
+Answer-D
+
+Given an array where numbers are in range from 1 to n6, which sorting algorithm can be used to sort these number in linear time?
+A. Not possible to sort in linear time
+B. Radix Sort
+C. Counting Sort
+D. Quick Sort
+Answer-B
