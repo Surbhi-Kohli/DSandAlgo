@@ -2,7 +2,8 @@
 You are given an array, A. Sort this array using counting sort algorithm.
 
 Input Format
-First line contains a single integer, n, denoting the size of the array. Next line contains n integers, denoting the elements of the array.
+First line contains a single integer, n, denoting the size of the array. Next line contains n integers, 
+denoting the elements of the array.
 
 Constraints
 1<=N<=10^6 -10^6<=Ai<=10^6
@@ -17,7 +18,8 @@ Sample Output
 1 2 3 5 6
 
 Points to be noted:
-1. Counting sort is efficient if the range of input data is not significantly greater than the number of objects to be sorted. Consider the situation where the input sequence is between range 1 to 10K and the data is 10, 5, 10K, 5K.
+1. Counting sort is efficient if the range of input data is not significantly greater than the number of objects
+to be sorted. Consider the situation where the input sequence is between range 1 to 10K and the data is 10, 5, 10K, 5K.
 2. It is not a comparison based sorting. It running time complexity is O(n) with space proportional to the range of data.
 3. It is often used as a sub-routine to another sorting algorithm like radix sort.
 4. Counting sort uses a partial hashing to count the occurrence of the data object in O(1).
