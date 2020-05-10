@@ -22,6 +22,7 @@ class Graph{
       for(auto i:adjList)//auto will automatically determine the data type
       {
           cout<<i.first<<" -> ";
+	      //i.second is Linked List
           for(auto entry:i.second)
           {
            cout<<entry<<",";   
