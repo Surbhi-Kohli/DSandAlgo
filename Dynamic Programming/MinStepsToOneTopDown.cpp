@@ -27,3 +27,38 @@ f(n) = 1 + f(n/2) // if n is divisible by 2
 f(n) = 1 + f(n/3) // if n is divisible by 3
 
 */
+#include <iostream>
+#include <climits>
+using namespace std;
+int minStepsToOne(int n,int dp[])
+{
+    if(n==1)
+    return 1;
+    
+    if(dp[n]!=0)
+    return dp[n];
+    
+    int op1,op2,op3;
+    op1=op2=op3=INT_MAX;
+    if(n%3==0)
+    {
+        op1=minStepsToOne(n/3,dp)+1;
+    }
+    if(n%2==0)
+    {
+        op2=minStepsToOne(n/2,dp)+1;
+    }
+    op3=minStepsToOne(n-1,dp)+1;
+    int ans=min(min(op1,op2),op3);
+    return dp[n]=ans;
+}
+
+int main() {
+   int n;
+   cin>>n;
+   int dp[100]={0};
+   cout<<minStepsToOne(n,dp);
+   
+	return 0;
+}
+
