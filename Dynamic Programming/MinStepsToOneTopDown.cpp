@@ -25,7 +25,7 @@ For finding minimum steps we have three possibilities for n and they are:
 f(n) = 1 + f(n-1)
 f(n) = 1 + f(n/2) // if n is divisible by 2
 f(n) = 1 + f(n/3) // if n is divisible by 3
-
+Time Complexity =O(n)
 */
 #include <iostream>
 #include <climits>
