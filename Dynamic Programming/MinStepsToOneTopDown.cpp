@@ -33,7 +33,7 @@ using namespace std;
 int minStepsToOne(int n,int dp[])
 {
     if(n==1)
-    return 1;
+    return 0;
     
     if(dp[n]!=0)
     return dp[n];
