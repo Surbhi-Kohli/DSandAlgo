@@ -41,7 +41,11 @@ int knapSack(int val[],int wt[],int W, int n)
     w = W; 
     for (i = n; i > 0 && res > 0; i--) { 
         
-          // the item is included. 
+        // either the result comes from the top 
+        // (K[i-1][w]) or from (val[i-1] + K[i-1] 
+        // [w-wt[i-1]])  in Knapsack table. If 
+        // it comes from the latter one/ it means  
+        // the item is included. 
         if (res == K[i - 1][w])  
             continue;         
         else { 
