@@ -18,6 +18,25 @@ Approach: For the recursive approach we will consider two cases.
 number of elements = total elements – 1
 2. Leave the ‘last’ element and now the required sum = target sum and number of elements = total elements – 1
 
+set[]={3, 4, 5, 2}
+sum=9
+(x, y)= 'x' is the left number of elements,
+'y' is the required sum
+  
+              (4, 9)
+             {True}
+           /        \  
+        (3, 6)       (3, 9)
+               
+        /    \        /   \ 
+     (2, 2)  (3, 6)   (2, 5)  (2, 9)
+     {True}  
+     /   \ 
+  (1, -3) (1, 2)  
+{False}  {True} 
+         /    \
+       (0, 0)  (0, 2)
+       {True} {False}    
 
 Complexity Analysis: The above solution may try all subsets of given set in worst case. Therefore time complexity
 of the above solution is exponential. The problem is in-fact NP-Complete 
