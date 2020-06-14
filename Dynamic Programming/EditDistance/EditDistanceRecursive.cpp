@@ -39,7 +39,7 @@ Remove: Recur for m-1 and n
 Replace: Recur for m-1 and n-1
 
 The time complexity of above solution is exponential. In worst case, we may end 
-up doing O(3m) operations. The worst case happens when none of characters of two strings match.
+up doing O(3^m) operations. The worst case happens when none of characters of two strings match.
 
 */
 
