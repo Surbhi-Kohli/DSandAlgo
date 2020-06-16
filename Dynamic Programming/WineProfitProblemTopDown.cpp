@@ -1,6 +1,9 @@
 /*
 Maximum profit from sale of wines
-Given n wines in a row, with integers denoting the cost of each wine respectively. Each year you have to sell either the first or the last wine in the row. However, the price of wines increases over time. Let the initial profits from the wines be P1, P2, P3…Pn. On the Yth year, the profit from the ith wine will be Y*Pi. So it is clear that n bottles will take n years to sell.
+Given n wines in a row, with integers denoting the cost of each wine respectively. Each year you have to sell
+either the first or the last wine in the row. However, the price of wines increases over time. Let the initial
+profits from the wines be P1, P2, P3…Pn. On the Yth year, the profit from the ith wine will be Y*Pi. So it is 
+clear that n bottles will take n years to sell.
 
 Find the maximum profit u can make by selling all the bottles
 
