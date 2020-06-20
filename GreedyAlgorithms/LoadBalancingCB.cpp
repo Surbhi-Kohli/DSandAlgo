@@ -50,8 +50,22 @@ int main() {
 	    for(int i=0;i<n;i++)
 	    {
 	        diff+=arr[i]-loadPerProcessor;
-	         int transferForThisBoundary=max(diff,-diff);
-	         transfer=max(transfer,transferForThisBoundary);
+	          //diff can be positive or negative dependending on whether
+	            //there is excess of work or  deficiency respectively.
+	            //Byt transferForThisBoundary has to be positive
+	            //as it denotes the number of transfers required
+	            
+	            int transferForThisBoundary=max(diff,-diff);
+	            
+	            //here we dont change sign of diff as its exact value will be used in 
+	            //defining diff for next boundary
+	            
+	             transfer=max(transfer,transferForThisBoundary);
+	        
+	        //We take max out of all transferForThisBoundary,coz transfers across boundaries
+	        //happen in a parallel fashion so overall no. of rounds/transfers
+	        //will be the transfer across boundary that took max rounds or steps to transfer jobs
+
 	        
 	    }
 	    cout<<transfer<<endl;
