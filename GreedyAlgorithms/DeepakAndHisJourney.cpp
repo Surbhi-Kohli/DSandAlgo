@@ -1,5 +1,6 @@
 /* 
-Deepak loves to travel but he wants to minimize the total travel expenditure. His journey will be through N checkpoints.
+Deepak loves to travel but he wants to minimize the total travel expenditure. His journey will be through N 
+checkpoints.
 Checkpoints are numbered from 0 to N−1. At the start of his journey he is present at the checkpoint 0.
 Also checkpoint N−1 will lead to his final destination.
 
@@ -48,8 +49,9 @@ int main() {
 	long long int t,n,expenditure;
 	cin>>t;
 	while(t--)
-	{ expenditure=0;
-    cin>>n;
+	{ 
+	 expenditure=0;
+          cin>>n;
 	long long int cost[n];
 	long long int petrolQuantity[n];
 	for(long long int i=0;i<n;i++)
@@ -60,11 +62,11 @@ int main() {
 	{
 		cin>>petrolQuantity[i];
 	}
-	expenditure=cost[0]*petrolQuantity[0];
+	  expenditure=cost[0]*petrolQuantity[0];
 	long long int minCost=cost[0];
 	for(long long int i=1;i<n;i++)
 	{
-     minCost=min(minCost,cost[i]);
+         minCost=min(minCost,cost[i]);
 	 expenditure+=minCost*petrolQuantity[i];
 
 	}
