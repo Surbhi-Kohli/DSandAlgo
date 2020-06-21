@@ -5,7 +5,8 @@ summationOf(abs(Ai-Bi))  where i goes from 1 to n/2
 Find the maximum and minimum values of differences of these two arrays.
 
 Input Format
-First Line contains number of test cases, T. For each test case, first line contains a single integer, n (n is even). Next line contains n integers, denoting the elements f array, A.
+First Line contains number of test cases, T. For each test case, first line contains a single integer, n (n is even).
+Next line contains n integers, denoting the elements f array, A.
 
 Constraints
 1<=T<=10
