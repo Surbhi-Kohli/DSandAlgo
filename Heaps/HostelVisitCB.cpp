@@ -130,7 +130,7 @@ int main(){
                     pq.push(rocketDistance(x, y));
                 }
             }///end of condition if(pq.size()==k) 
-            else {
+            else if(pq.size()<k) {
                 pq.push(rocketDistance(x, y));
               }
         }//end of condition if(type==1) 
