@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 template <typename T>
@@ -14,16 +15,16 @@ class Node{
         next=NULL;
     }
     
-    ~Node(){
-        if(next!=NULL)
-        {
-            delete next;
-        }
-    }
+    // ~Node(){ //this caused a problem as when we are erasing a particcular node in a list,its next nodes were also being deleted
+    //     if(next!=NULL)   //so commented the distructor
+    //     {
+    //         delete next;
+    //     }
+     // }
 };
 template<typename T>
 class HashTable{
-    Node <T>** table;
+    Node <T> **table;
     int curr_size;
     int table_size;
     
@@ -55,25 +56,26 @@ class HashTable{
     void insert(string key,T value)
     {   
         int idx=hashFn(key);
-       // cout<<value<<endl;
         Node<T> *n=new Node<T>(key,value);
-    
         n->next=table[idx];
         table[idx]=n;
-        
         curr_size++;
+        
     }
     void print(){
         for(int i=0;i<table_size;i++)
-        {
-            cout<<"Bucket"<<i<<" ->";
-            Node<T> *temp=table[i]; 
+        {  
             
+            Node<T> *temp=table[i]; 
+            cout<<"Bucket "<<i<<"->";
+           
             while(temp!=NULL)
             {  
+              
                 cout<<temp->key<<","<<temp->value<<" -> ";
                 temp=temp->next;
             }
+          //  cout<<"out of while"<<endl;
             cout<<endl;
         }
     }
@@ -84,14 +86,45 @@ class HashTable{
         while(temp!=NULL)
         {
             if(temp->key==key)
-            {  // cout<<"key found with value = "<<temp->value<<endl;
-                return &temp->value;
-                
+            {
+                return &temp->value;   
             }
             temp=temp->next;
         }
         
         return NULL;
+    }
+    void erase(string key)
+    {
+        int idx=hashFn(key);
+        Node<T> *head=table[idx];
+        Node<T> *temp=head;
+        
+        Node<T> *prev=NULL;
+        while(temp)
+        {
+            if(temp->key==key)
+            {
+                if(temp==head)
+                {
+                  
+                     table[idx]=temp->next;
+                    
+                }
+                else{
+                     prev->next=temp->next;
+                }
+               
+                delete temp;
+                break;
+            }
+            
+            prev=temp;
+            temp=temp->next;
+            
+          
+        }
+       
     }
     
     
@@ -122,13 +155,18 @@ Bucket6 ->
   */
   
   
-	int* price=price_menu.search("Coke");
+	int* price=price_menu.search("Noodles");
 	if(price!=NULL)
 	{
-	    cout<<*price<<endl;//40
+	    cout<<"Price of the searched item is "<<*price<<endl; //25
 	}
 	else
 	cout<<"Item not found";
+	
+	price_menu.erase("Coke");
+	price_menu.print();
+	
+	
 	
 	return 0;
 }
