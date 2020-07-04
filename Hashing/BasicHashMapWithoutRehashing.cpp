@@ -15,7 +15,7 @@ class Node{
         next=NULL;
     }
     
-    // ~Node(){ //this caused a problem as when we are erasing a particcular node in a list,its next nodes were also being deleted
+    // ~Node(){ //this caused a problem as when we are erasing a particular node in a list,its next nodes were also being deleted
     //     if(next!=NULL)   //so commented the distructor
     //     {
     //         delete next;
@@ -113,15 +113,12 @@ class HashTable{
                 }
                 else{
                      prev->next=temp->next;
-                }
-               
+                    }
                 delete temp;
                 break;
             }
-            
             prev=temp;
             temp=temp->next;
-            
           
         }
        
@@ -150,10 +147,7 @@ Bucket4 ->Coke,40 -> Pepsi,20 ->
 Bucket5 ->BurgerPizza,150 -> 
 Bucket6 ->
   
-  
-  
   */
-  
   
 	int* price=price_menu.search("Noodles");
 	if(price!=NULL)
@@ -165,8 +159,6 @@ Bucket6 ->
 	
 	price_menu.erase("Coke");
 	price_menu.print();
-	
-	
 	
 	return 0;
 }
