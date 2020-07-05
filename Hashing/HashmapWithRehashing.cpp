@@ -1,3 +1,42 @@
+/*
+Bucket 0->
+Bucket 1->
+Bucket 2->Noodles,25 -> Pizza,150 -> 
+Bucket 3->Burger,120 -> 
+Bucket 4->Coke,40 -> 
+Bucket 5->BurgerPizza,150 -> 
+Bucket 6->
+Bucket 7->
+Bucket 8->
+Bucket 9->
+Bucket 10->
+Bucket 11->Pepsi,20 -> 
+Bucket 12->
+Bucket 13->
+
+***********************
+Price of the searched item is 25
+
+**********After Deleting a node*************
+Bucket 0->
+Bucket 1->
+Bucket 2->Pizza,150 -> 
+Bucket 3->Burger,120 -> 
+Bucket 4->Coke,40 -> 
+Bucket 5->BurgerPizza,150 -> 
+Bucket 6->
+Bucket 7->
+Bucket 8->
+Bucket 9->
+Bucket 10->
+Bucket 11->Pepsi,20 -> 
+Bucket 12->
+Bucket 13->
+
+
+*/
+
+
 #include <iostream>
 using namespace std;
 template <typename T>
