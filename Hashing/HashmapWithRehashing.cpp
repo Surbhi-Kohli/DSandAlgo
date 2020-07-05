@@ -92,12 +92,15 @@ class HashTable{
           for(int i=0;i<oldSize;i++)
           {
            Node<T>* n=oldTable[i];
+           Node<T>* prev=oldTable[i];
            while(n!=NULL)
            { 
                insert(n->key,n->value);
-               n=n->next;
-               
+                n=n->next;
+
            }
+        
+           
          
           }
           
@@ -117,11 +120,23 @@ class HashTable{
         }
         
     }
+    ~HashTable(){ //will be called when we do delete [] oldTable
+        for(int i=0;i<table_size;i++)
+        {
+            Node<T>* head=table[i];
+            while(head)
+            {
+                Node<T> *temp=head->next;
+                delete head;
+                head=temp;
+            }
+        }
+    }
     
     void insert(string key,T value)
     {   
         int idx=hashFn(key);
-      //  cout<<idx<<" is the id for key "<<key<<endl;
+      
         Node<T> *n=new Node<T>(key,value);
         n->next=table[idx];
         table[idx]=n;
@@ -237,25 +252,25 @@ Bucket 13->
 	cout<<"Item not found";
 	cout<<endl<<"**********After Deleting a node*************"<<endl;
 	
-	price_menu.erase("Coke");
+	price_menu.erase("Noodles");
  	price_menu.print();
  	
  	/*
 
-   Bucket 0->
-   Bucket 1->
-   Bucket 2->Noodles,25 -> Pizza,150 -> 
-   Bucket 3->Burger,120 -> 
-   Bucket 4->
-   Bucket 5->BurgerPizza,150 -> 
-   Bucket 6->
-   Bucket 7->
-   Bucket 8->
-   Bucket 9->
-   Bucket 10->
-   Bucket 11->Pepsi,20 -> 
-   Bucket 12->
-   Bucket 13->
+Bucket 0->
+Bucket 1->
+Bucket 2->Pizza,150 -> 
+Bucket 3->Burger,120 -> 
+Bucket 4->Coke,40 -> 
+Bucket 5->BurgerPizza,150 -> 
+Bucket 6->
+Bucket 7->
+Bucket 8->
+Bucket 9->
+Bucket 10->
+Bucket 11->Pepsi,20 -> 
+Bucket 12->
+Bucket 13->
 
  	*/
 	
