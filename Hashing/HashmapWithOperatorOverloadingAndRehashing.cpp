@@ -160,6 +160,7 @@ class HashTable{
                      prev->next=temp->next;
                     }
                 delete temp;
+		    curr_size--;
                 break;
             }
             prev=temp;
