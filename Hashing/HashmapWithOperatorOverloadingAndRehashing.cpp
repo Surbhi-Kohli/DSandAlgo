@@ -44,7 +44,7 @@ class HashTable{
         Node<T> **oldTable=table;
          int oldSize=table_size;
          table_size=2*table_size+3;
-         table=new Node<T>* [table_size];
+         table=new Node<T>* [table_size]();
          for(int i=0;i<table_size;i++)
          { 
           table[i]=NULL;
