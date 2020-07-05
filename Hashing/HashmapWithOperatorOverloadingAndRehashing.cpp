@@ -53,16 +53,13 @@ class HashTable{
           for(int i=0;i<oldSize;i++)
           {
            Node<T>* n=oldTable[i];
-           Node<T>* prev=oldTable[i];
+      
            while(n!=NULL)
            { 
                insert(n->key,n->value);
                 n=n->next;
 
-           }
-        
-           
-         
+	   }
           }
         
     delete [] oldTable;
@@ -73,7 +70,7 @@ class HashTable{
     HashTable(int ts=7)
     {
         table_size =ts;
-        table=new Node<T> *[table_size];
+        table=new Node<T> *[table_size]();
         curr_size=0;
         for(int i=0;i<table_size;i++)
         {
