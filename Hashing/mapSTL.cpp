@@ -1,3 +1,20 @@
+/*
+
+Output of below code
+Price of fruit grapes is 50
+Price of fruit searched by count function is 50
+Apple and 120
+Mango and 100
+grapes and 72
+lichi and 60
+Apple:120
+Mango:100
+grapes:72
+lichi:60
+
+
+*/
+
 #include <iostream>
 #include <map>
 #include <string>
