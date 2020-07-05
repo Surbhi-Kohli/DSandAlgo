@@ -1,5 +1,5 @@
 /*
-
+Input:grapes
 Output of below code
 Price of fruit grapes is 50
 Price of fruit searched by count function is 50
