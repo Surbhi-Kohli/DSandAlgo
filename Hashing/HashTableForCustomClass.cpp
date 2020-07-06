@@ -43,7 +43,8 @@ class Student{
     };
 int main() {
 	// your code goes here
-	unordered_map<Student,int,HashFn> student_map;
+	unordered_map<Student,int,HashFn> student_map;//STL map accepts third argument as name of comparator class which has our own hash function
+	                                             // which will calculate hash table index for every element
 	Student s1("Prateek","Narang","010");
 	Student s2("Rahul","Kumar","023");
 	Student s3("Prateek","Gupta","030");
