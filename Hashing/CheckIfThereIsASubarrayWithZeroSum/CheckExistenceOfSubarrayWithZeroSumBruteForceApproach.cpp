@@ -23,6 +23,7 @@ bool checkSubarrayWithZeroSum(int arr[],int n)
         if(sum==0)
         return true;
     }
+	return false;
 }
 
 
