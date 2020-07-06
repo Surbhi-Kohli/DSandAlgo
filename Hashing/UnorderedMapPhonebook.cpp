@@ -23,5 +23,14 @@ int main() {
 	    cout<<endl;
 	}
 	
+	string name;
+	cin>>name;//Rahul
+	if(phonebook.count(name)==0)
+		cout<<"entry not found"<<endl;
+	else{
+	     for(string s:phonebook[name])
+		cout<<s<<" "; //9110 9112 9113 
+		cout<<endl;
+	     }
 		return 0;
 }
