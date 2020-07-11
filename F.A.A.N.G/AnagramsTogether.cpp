@@ -27,6 +27,7 @@ bat
 tan nat
 
 Time Complexity: O(NKlogK),where K=length of max length string,N=no. of strings(6 here in above input)
+Space Complexity:O(NK)
 */
 #include <unordered_map>
 #include <vector>
