@@ -27,7 +27,7 @@ void wavePrint(vector<vector<int>> v,int row,int col)
     for(int j=0;j<col;j++)
     {
         //check for odd or even col
-        if(j&1)
+        if(j&1)//means odd column
         {
             for(int i=row-1;i>=0;i--)
             cout<<v[i][j]<<" ";
