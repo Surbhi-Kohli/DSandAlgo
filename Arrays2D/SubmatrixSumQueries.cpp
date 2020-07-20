@@ -17,6 +17,7 @@ Input:                      Output:38
 1 2 3 3
 
 */
+
 #include <iostream>
 using namespace std;
 
@@ -36,7 +37,14 @@ int main() {
             cin>>arr[i][j];
         }
     }
-    int prefix[n][m]={0};
+    int prefix[n][m];
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+         {
+             prefix[i][j]=0;
+         }
+    }
     for(int i=0;i<n;i++)
     {
         prefix[i][0]=arr[i][0];
@@ -64,14 +72,28 @@ int main() {
         int sum=0;
         cin>>ti>>tj>>bi>>bj;
      
-        if(ti!=0 && tj!=0)
-        sum=prefix[bi][bj]-prefix[ti-1][bj]-prefix[bi][tj-1]+prefix[ti-1][tj-1];
-        else if(ti!=0 && tj==0)
-          sum=prefix[bi][bj]-prefix[ti-1][bj];
-         else if(ti==0 && tj!=0)
-          sum=prefix[bi][bj]-prefix[bi][tj-1];
-          else
-          sum=prefix[bi][bj];
+       
+        sum=sum+prefix[bi][bj];
+        if(ti>0)
+        sum=sum-prefix[ti-1][bj];
+        if(tj>0)
+        sum=sum-prefix[bi][tj-1];
+        
+        if(ti>0 && tj>0)
+        {
+            sum=sum+prefix[ti-1][tj-1];
+        }
+        
+         // OR
+         //if(ti!=0 && tj!=0)
+        // sum=prefix[bi][bj]-prefix[ti-1][bj]-prefix[bi][tj-1]+prefix[ti-1][tj-1];
+        // else if(ti!=0 && tj==0)
+        //   sum=prefix[bi][bj]-prefix[ti-1][bj];
+        //  else if(ti==0 && tj!=0)
+        //   sum=prefix[bi][bj]-prefix[bi][tj-1];
+        //   else
+        //   sum=prefix[bi][bj];
+        
           cout<<sum<<endl;
           
     }
