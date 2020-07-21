@@ -23,6 +23,13 @@ Sample Input
 Sample Output
 5
 3
+
+Sample Input 
+1
+7
+5 2 5 6 4 3 7
+Sample Output
+4
  O(n)
 
 */
