@@ -1,6 +1,8 @@
 /*
 Approach 2-Store all array elements in a set .Find out the max-element and min-element of the array.Loop for i from min-element to max-element 
 and keep checking if that i is present in set or not.If consecutive i is present,incremnt l.Find max of l,every time consecutive series breaks.
+Time complexity= O(max-min).Although the complexity looks linear ,but this can take lot of time if numbers are not evenly distributed in range [max,min]
+and if diff in max n in is large.
 */
 
 
