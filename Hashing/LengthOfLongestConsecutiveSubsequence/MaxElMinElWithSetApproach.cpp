@@ -45,4 +45,5 @@ int main() {
 	    cin>>arr[i];
 	}
 	cout<<longestConsecutiveSubsequence(arr,n);
-	
+	return 0;
+}
