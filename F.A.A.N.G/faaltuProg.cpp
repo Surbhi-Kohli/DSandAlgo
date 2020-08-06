@@ -18,21 +18,22 @@ void deepCopy(vector<pair<int,int>> vc)
     Node *temp=head; 
     int currIndex=0;
     int i=1;
-    while(i<n)
+        cout<<"Old List: ";
+        cout<<"("<<vc[0].first<<", ";
+    while(i<vc.size())
     {
          temp->next=new Node(vc[vc[currIndex].second].first);
-         i++;
+         cout<<vc[vc[currIndex].second].first<<") ";
+         
          currIndex=vc[currIndex].second;
          temp=temp->next;
-       
+          temp->next=new Node(vc[vc[currIndex].second].first);
+        cout<<"("<<vc[vc[currIndex].second].first<<", ";
+         currIndex=vc[currIndex].second;
+         
+        i+=2;
     }
-    Node *oldL=head;
-    cout<<"Old List: ";
-    while(oldL!=NULL)
-    {
-        cout<<""
-    }
-    
+   
     
 }
 int main() {
@@ -40,7 +41,7 @@ int main() {
 	int n;
 	cin>>n;
 	int x,y;
-	vector<pair<int,int>> vc;
+	vector<pair<int,int>> vc(n);
 	for(int i=0;i<n;i++)
 	{  cin>>x>>y;
 	
