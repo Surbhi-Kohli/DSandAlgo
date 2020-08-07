@@ -1,0 +1,47 @@
+Q1. Delete In A Linked List
+Consider a singly linked list of the form where F is a pointer to the first element in the linked list and L is the
+pointer to the last element in the list. The time of which of the following operations depends on the length of the list?
+
+a.Delete the element from the last
+b.Delete the element from first
+c.Add an element to the last
+d.Interchange the first two elements
+Ans-a
+
+Q2. Kth element in a Linked List
+In what best complexity you can find the kth element from last in a linked list?
+
+a.Time: O(n^2) Space: O(1)
+b.Time: O(n) Space: O(n)
+c.Time: O(n) Space: O(1)
+d.None
+Ans-c
+
+Q3. Basics of Linked List
+Which of the following points is/are true about Linked List data structure when it is compared with array
+a.Arrays have better cache locality that can make them better in terms of performance.
+b.It is easy to insert and delete elements in Linked List
+c.Random access is not allowed in a typical implementation of Linked Lists
+d.The size of array has to be pre-decided, linked lists can change their size any time
+e.All of above
+
+Ans-e
+
+Q4. List concatenation
+The concatenation of two list can performed in O(1) time. Which of the following variation of linked list can be used?
+
+a.Singly linked list
+b.Doubly linked list
+c.Circular doubly linked list
+d.Array implementation of list
+
+Ans-c
+Explanation:8
+
+You can easily concatenate two lists in O(1) time using either a single linked list or a doubly linked list, provided that 
+you have a pointer to the last node in at least one of the lists. (And, of course, pointers to the list heads.)
+You can't do it with an array implementation, because you end up having to allocate more memory and copy the new resulting list to it.
+Even if the array already has memory allocated, you still have to copy all of the new items to it. So it's either O(m+n) or O(n)
+(where m and n are the lengths of the individual lists, respectively).
+With a circularly linked list, you can easily concatenate them in O(1) time. It's just a matter of breaking a link in both
+lists, and then hooking them together. This assumes, of course, that the order of items isn't especially important.
