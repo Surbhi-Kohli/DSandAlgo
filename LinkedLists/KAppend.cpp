@@ -84,7 +84,7 @@ int main() {
           ans=append(head,k);
     }
     
-else if(k>n)
+else if(k>n) //important
 {
     k=k-n;
     ans=append(head,k);
