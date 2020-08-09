@@ -17,6 +17,10 @@ Sample Output
 1 1 2 2 2
 
 Sample Input
+7
+1 2 4 3 8 5 6
+Sample Output
+1 3 5 2 4 8 6
 
 */
 #include <iostream>
