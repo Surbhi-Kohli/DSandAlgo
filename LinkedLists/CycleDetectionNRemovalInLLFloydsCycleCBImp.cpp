@@ -64,7 +64,7 @@ Node* cycleDetectionInLinkedList(Node *&head)
 		  }
 		  if(prev!=NULL)
 		  prev->next=NULL;
-		  else
+		  else //prev will be NULL like in test case 1->2->1
 		  fast->next->next=NULL;
 	   }
    }
