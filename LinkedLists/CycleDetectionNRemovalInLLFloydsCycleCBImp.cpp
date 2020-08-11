@@ -18,6 +18,15 @@ Sample Output
 Explanation
 Initially the first five elements are unique but starts repeating from 2. This means there is a link from 5 back to 2. So it represents a cycle. We have to break this cycle and print the list after breaking the cycle.
 
+Sample Input //Important
+1 2 1 -1
+Sample Output
+1 2
+
+Sample Input
+1 2 3 4 5 6 7 2
+Sample Output
+1 2 3 4 5 6 7
 */
 #include<iostream>
 #include <unordered_map>
@@ -36,13 +45,25 @@ Node* cycleDetectionInLinkedList(Node *&head)
 {  //cout<<"in function "<<endl;
     Node *slow=head;
 	Node *fast=head;
-   while(fast!=NULL && fast->next!=NULL)
+    while(fast!=NULL && fast->next!=NULL)
    {
 	   fast=fast->next->next;
 	   slow=slow->next;
-	   if(fast==slow)
+	   Node *prev=NULL;
+	  if(fast==slow)
 	   {
-		   fast->next->next=NULL;
+		
+		   slow=head;
+                   while(slow!=fast)
+		  {
+			  prev=fast;
+			  fast=fast->next;
+			  slow=slow->next;
+		  }
+		  if(prev!=NULL)
+		  prev->next=NULL;
+		  else
+		  fast->next->next=NULL;
 	   }
    }
    return head;
