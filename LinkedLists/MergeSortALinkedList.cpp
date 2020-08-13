@@ -13,14 +13,15 @@ class Node{
 Node* midPoint(Node* head){
     if(head==NULL || head->next==NULL)
     return head;
-    Node *fast=head->next;
+    Node *fast=head->next;//Important,in cas of even length ll , we need mid as left mid
+    //coz imagine we have LL as 5->3 if mid is 3,a=3,b=null,left of a will not be checked for sorting
     Node* slow=head;
     while(fast!=NULL && fast->next!=NULL)
     {
         fast=fast->next->next;
         slow=slow->next;
     }
-    cout<<"mid pt is "<<slow->data<<endl;
+  
     return slow;
 }
 Node* merge(Node* head1,Node* head2)
@@ -47,7 +48,7 @@ Node* merge(Node* head1,Node* head2)
     }
 }
 Node* mergeSort(Node *head){
-    cout<<"in merge sort"<<endl;
+   
     if(head==NULL || head->next==NULL)
       return head;
       Node *mid=midPoint(head);
@@ -70,11 +71,10 @@ int main() {
 	for(int i=1;i<n;i++)
 	{  
 	    cin>>x;
-	    cout<<"read "<<x<<endl;
 	    tail->next=new Node(x);
 	    tail=tail->next;
 	}
-	cout<<"read all numbers"<<endl;
+
 	Node *sortedL=mergeSort(head);
 	while(sortedL!=NULL)
 	{
