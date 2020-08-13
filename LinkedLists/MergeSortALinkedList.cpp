@@ -13,13 +13,14 @@ class Node{
 Node* midPoint(Node* head){
     if(head==NULL || head->next==NULL)
     return head;
-    Node *fast=head;
+    Node *fast=head->next;
     Node* slow=head;
     while(fast!=NULL && fast->next!=NULL)
     {
         fast=fast->next->next;
         slow=slow->next;
     }
+    cout<<"mid pt is "<<slow->data<<endl;
     return slow;
 }
 Node* merge(Node* head1,Node* head2)
@@ -34,20 +35,21 @@ Node* merge(Node* head1,Node* head2)
     while(head1!=NULL && head2!=NULL)
     {
         if(head1->data<head2->data)
-        {
-            head1->next=merge(head1->next,head2);
-            return head1;
+        {  finalHead=head1;
+           finalHead->next=merge(head1->next,head2);
+            return finalHead;
         }
         else{
-            head1->next=merge(head1,head2->next);
-            return head1;
+            finalHead=head2;
+            finalHead->next=merge(head1,head2->next);
+            return finalHead;
         }
     }
 }
 Node* mergeSort(Node *head){
     cout<<"in merge sort"<<endl;
     if(head==NULL || head->next==NULL)
-    return head;
+      return head;
       Node *mid=midPoint(head);
       Node *a=head;
       Node *b=mid->next;
