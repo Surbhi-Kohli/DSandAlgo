@@ -1,3 +1,12 @@
+/*
+Sample Input:
+7
+1 4 3 2 5 7 6
+Sample Output:
+1 2 3 4 5 6 7 
+
+*/
+
 #include<iostream>
 using namespace std;
 class Node{
@@ -10,7 +19,7 @@ class Node{
 	}
 };
 
-Node* sortedInsert(Node* head,int val)
+Node* sortedInsert(Node*& head,int val)
 {  
    if(head==NULL)
    {
@@ -26,23 +35,25 @@ Node* sortedInsert(Node* head,int val)
            head=temp;
            return head;
        }
-       else{ Node* temp=head;
-       Node * prev=NULL;
-       while(temp!=NULL && temp->data<val)
-       {   prev=temp;
-           temp=temp->next;
-       }
-       prev->next=new Node(val);
-       prev=prev->next;
-       prev->next=temp;
-       return head;
+       else
+       {
+           Node* temp=head;
+           Node * prev=NULL;
+         while(temp!=NULL && temp->data<val)
+         {   prev=temp;
+             temp=temp->next;
+         }
+         prev->next=new Node(val);
+         prev=prev->next;
+         prev->next=temp;
+         return head;
+       
       }
    }
 }
 int main() {
 	int n,val;
 	cin>>n;
-
 	int x;
 	Node *head=NULL;
     
@@ -58,13 +69,12 @@ int main() {
    }
    Node* sorted=NULL;
    Node* temp=head;
-  while(temp!=NULL)
-  {
-      Node* n=temp->next;
-   sortedInsert(sorted,temp);
-    temp=n;
-  }
- Node* ans=head;
+   while(temp!=NULL)
+   { 
+    sorted= sortedInsert(sorted,temp->data);
+    temp=temp->next;
+   }
+    Node* ans=sorted;
    while(ans!=NULL)
    {
        cout<<ans->data<<" ";
