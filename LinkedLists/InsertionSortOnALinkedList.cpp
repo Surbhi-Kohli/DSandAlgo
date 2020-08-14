@@ -1,4 +1,23 @@
 /*
+Given a linked list with n nodes. Sort the linked list using insertion sort.
+
+Input Format
+First line contains the number of nodes in the linked list n and then next line contains n space separated integers representing 
+the node values of the linked list.
+
+Constraints
+n < 30
+
+Output Format
+Print the linked list after sorting it using insertion sort.
+
+Sample Input
+5
+2 3 4 1 5
+Sample Output
+1 2 3 4 5
+Explanation
+None
 Sample Input:
 7
 1 4 3 2 5 7 6
