@@ -16,6 +16,8 @@ Sample Input
 Sample Output
 false
 
+Time Complexity-O(n)
+Space Complexity-O(n)
 */
 #include <iostream>
 #include <stack>
