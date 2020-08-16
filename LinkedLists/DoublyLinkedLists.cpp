@@ -28,6 +28,16 @@ void insertBeforeANode(Node **head,Node *beforeNode,int d)
     newN->next=beforeNode;
     beforeNode->prev=newN;
 }
+void insertAfterNode(Node **head,Node *afterNode,int d)
+{
+    Node *newNode=new Node();
+    newNode->data=d;
+    Node* afterNext=afterNode->next;
+     afterNode->next=newNode;
+      newNode->next=afterNext;
+      afterNext->prev=newNode;
+      
+}
 void print(Node* head)
 { 
     while(head!=NULL)
@@ -36,6 +46,7 @@ void print(Node* head)
      head=head->next;
     }
 }
+
 int main() {
   //Creating DLL;
   Node *head=NULL;
@@ -51,6 +62,9 @@ int main() {
    insertBeforeANode(&head, head->next, 8); 
    cout<<endl<<"****************************";
    cout<<endl;
+   print(head);
+   cout<<endl;
+   insertAfterNode(&head,head->next->next,99);
    print(head);
    return 0;
 }
