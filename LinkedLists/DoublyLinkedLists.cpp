@@ -11,7 +11,10 @@ DLL on Inserting a Nodde after a node
 
 DLL post Appending :
 6 8 5 99 3 4 2 1 100 
-
+gonna delete various nodes 
+8 5 99 3 4 2 1 100 
+8 99 3 4 2 1 100 
+8 3 4 2 1 100 
 
 */
 
@@ -97,6 +100,28 @@ void print(Node* head)
      head=head->next;
     }
 }
+void deleteNode(Node **head,Node* del)
+{
+    if((*head)==NULL||del==NULL)
+    return;
+     if((*head)==del)
+     {
+         (*head)=del->next;
+     }
+      /* Change next only if node to be  
+    deleted is NOT the last node */
+    if (del->next != NULL)  
+        del->next->prev = del->prev;  
+  
+    /* Change prev only if node to be  
+    deleted is NOT the first node */
+    if (del->prev != NULL)  
+        del->prev->next = del->next;  
+  
+    /* Finally, free the memory occupied by del*/
+    free(del);  
+    return;  
+}
 int main() {
   //Creating DLL;
   Node *head=NULL;
@@ -123,5 +148,15 @@ int main() {
    append(&head,100);
    cout<<endl<<"DLL post Appending :"<<endl;
    print(head);
+   cout<<endl;
+    cout<<"gonna delete various nodes "<<endl;
+    deleteNode(&head, head); /*delete first node*/
+    print(head);
+    cout<<endl;
+    deleteNode(&head, head->next); 
+      print(head);
+      cout<<endl;
+    deleteNode(&head, head->next);
+      print(head);
    return 0;
 }
