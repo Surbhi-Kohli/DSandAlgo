@@ -13,44 +13,27 @@ void insertAtHead(Node **head,int x)
    Node* temp=new Node();
    temp->data=x;
    temp->prev=NULL;
-   
    temp->next=(*head);
-   
    if((*head)!=NULL)
    (*head)->prev=temp;
    
    (*head)=temp;
-   
-    
 }
-void insertBeforeANode(Node **head,Node *pehla,int d)
+void insertBeforeANode(Node **head,Node *beforeNode,int d)
 {
-    Node* before=NULL;
-    Node* temp=(*head);
-    while(temp!=pehla)
-    {
-        before=temp;
-        temp=temp->next;
-    }
-      Node* newN=new Node();
-      newN->data=d;
-      newN->next=pehla;
-      newN->prev=before;
-      before->next=newN;
-      pehla->prev=newN;
-       if(newN->prev==NULL)
-         (*head)=newN;
-  
-    
+    Node* newN=new Node();
+    newN->data=d;
+    Node* prevNode=beforeNode->prev;
+    prevNode->next=newN;
+    newN->next=beforeNode;
+    beforeNode->prev=newN;
 }
 void print(Node* head)
 { 
-   
     while(head!=NULL)
     {
      cout<<head->data<<" ";
      head=head->next;
-        
     }
 }
 int main() {
@@ -63,11 +46,11 @@ int main() {
       insertAtHead(&head,x);
       cin>>x;
   }
- 
-  print(head);
+   print(head);
+  
    insertBeforeANode(&head, head->next, 8); 
    cout<<endl<<"****************************";
    cout<<endl;
-    print(head);
-	return 0;
+   print(head);
+   return 0;
 }
