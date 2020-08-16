@@ -3,6 +3,16 @@
 remove() : Removes all the elements from the list, which are equal to given element.
 erase() : Removes a single element or a range of elements from the list.
 insert() : Inserts new elements in the list before the element at a specified position.
+
+Output of below program:
+kiwi -> mango -> guava -> banana -> guava -> orange -> lemon -> 
+list after removing guava is 
+kiwi ,mango ,banana ,orange ,lemon ,
+
+List after erasing the 3rd element of the linked list
+kiwi ,mango ,orange ,lemon ,
+linked list after inserting fruit juice at element b4 2nd element
+kiwi ,fruit juice ,mango ,orange ,lemon ,
 */
 
 
