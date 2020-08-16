@@ -9,61 +9,71 @@ Heap Sort Algorithm for sorting in increasing order:
 
 */
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
-void downHeapify(vector<int> &arr,int i,int size)
+void downheapify(vector<int> &arr,int i,int size)
 {
-    int left=2*i+1;
-    int right=2*i+2;
+    int left=(2*i)+1;
+    int right=(2*i)+2;
     if(left>=size && right>=size)
     return;
-    int temp=i;
-    if(left<size && arr[left]>arr[temp])
+    int temp = i;
+    if(left<size && arr[left]>arr[temp] )
     {
-        temp=left;
-        
+        temp = left;
+    
     }
     if(right<size && arr[right]>arr[temp])
     {
-        temp=right;
+        temp = right;
     }
     if(temp==i)
     return;
-     swap(arr[temp],arr[i]);
-     downHeapify(arr,temp,size);
+    swap(arr[i],arr[temp]);
+   // swap(arr[temp],arr[i]);
+    downheapify(arr,temp,size);
+    
 }
-void buildHeapOptimized(vector<int> &arr)
+void buildHeap_Optimised(vector<int> &arr)
 {
-    for(int i=arr.size()/2-1;i>=0;i--)
+    for(int i=arr.size()/2 -1 ;i>=0;i--)
     {
-        downHeapify(arr,i,arr.size());
+      downheapify(arr,i,arr.size()); 
     }
 }
-void heapSort(vector<int> &arr)
+void heapsort(vector <int> &arr)
 {
-    int heapSize=arr.size();
-    buildHeapOptimized(arr);
-    for(int i=heapSize-1;i>=0;i--)
-    {
-        swap(arr[0],arr[heapSize-1]);
-        heapSize--;
-        downHeapify(arr,0,heapSize);
-    }
+    int heapsize = arr.size();
+    buildHeap_Optimised(arr);
+   
+   while(heapsize>0)
+   {
+     cout<<arr[0]<<" ";
+     swap(arr[0],arr[heapsize-1]);
+ 
+    heapsize=heapsize-1;
+ 
+    downheapify(arr,0,heapsize);
+  
+
+   }
+
+    
+    
 }
 int main() {
-	vector<int> arr;
+	// your code goes here
+	vector <int> arr;
 	int n;
-	cin>>n;  //7
-	for(int i=0;i<n;i++)
+	cin>>n;
+	for(int i =0;i<n;i++)
 	{
 	    int x;
 	    cin>>x;
-	    arr.push_back(x); //2 1 4 3 6 7 5
+	    arr.push_back(x);
 	}
-	heapSort(arr);
-	for(int i=0;i<n;i++)
-	cout<<arr[i]<<" ";//1 2 3 4 5 6 7
+	heapsort(arr);
+
 	cout<<endl;
-	
 	return 0;
 }
