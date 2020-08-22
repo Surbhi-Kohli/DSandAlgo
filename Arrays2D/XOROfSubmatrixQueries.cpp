@@ -1,4 +1,4 @@
-/*
+/*  #Google
 Given an N * N matrix and q queries, each containing position of top-left and bottom-right corner of a rectangular sub-matrix,
 the task is to find the xor of all the elements from this sub-matrix.
 A simple solution is to find the XOR of the entire sub-matrix for each query. Thus, the worst case time complexity for each query will be O(n2).
