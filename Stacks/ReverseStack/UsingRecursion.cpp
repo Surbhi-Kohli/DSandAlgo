@@ -1,5 +1,5 @@
 /* Reverse a Stack using Recursion. Do not use any extra stack.
-
+-Using recursion,space complexity is O(n),where this space is the space taken by functional stack
 Input Format
 First line contains an integer N (size of the stack).
 Next N lines follow each containing an integer to be stored in the stack where the last integer is at the top of the stack.
