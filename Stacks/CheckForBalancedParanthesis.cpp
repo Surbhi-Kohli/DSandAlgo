@@ -1,6 +1,9 @@
 /*
 Given an expression string exp, write a program to examine whether the pairs and the orders of “{“, “}”, “(“, “)”, “[“, “]” are correct in exp.
 
+
+Time Complexity: O(n)
+Auxiliary Space: O(n) for stack for the below solution.
 Input:[()]{}{[()()]()}
 Output:The expression is balanced
 Input:[(])
