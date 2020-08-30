@@ -104,7 +104,7 @@ int main() {
 	    g.addEdge(x,y);
 	    
 	}
-  //for single nodes not dependent on any nodes,We need to have edge starting n ending at there own self
+  //for  nodes  dependent on any node,We need to have edge starting n ending at there own self,so that the adj does have thise nodes as a key
 	for(int i=0;i<nodes;i++)
 	{
 	    if(included[i]==0)
