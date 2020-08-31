@@ -15,7 +15,8 @@ Constraints
 
 Output Format
 Print an integer which denotes the minimum time taken to rot all the oranges (-1 if it is impossible).
-
+Important test cases
+Example 1:
 Sample Input
 1
 3 5
@@ -25,6 +26,21 @@ Sample Input
 Sample Output
 2
 
+Example 2:
+Input: 
+3 3
+2 1 1 
+0 1 1
+1 0 1
+Output: -1
+Explanation:  The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.
+
+Example 3:
+Input:
+1 2
+0 2
+Output: 0
+Explanation:  Since there are already no fresh oranges at minute 0, the answer is just 0.
 
 Time/Space Complexity Analysis:
 
