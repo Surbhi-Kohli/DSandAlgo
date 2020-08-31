@@ -19,23 +19,20 @@ Print an integer which denotes the minimum time taken to rot all the oranges (-1
 Sample Input
 1
 3 5
-2 
-1 
-0 
-2 
-1 
-1 
-0 
-1 
-2 
-1 
-1 
-0 
-0 
-2 
-1
+2 1 0 2 1 
+1 0 1 2 1 
+1 0 0 2 1
 Sample Output
 2
+
+
+Time/Space Complexity Analysis:
+
+Time Complexity: O( R *C).
+Each element of the matrix can be inserted into the queue only once so the upperbound of iteration is O(R*C), i.e. the number of elements.
+So time complexity is O(R *C).
+Space Complexity: O(R*C).
+To store the elements in a queue O(R*C) space is needed.
 */
 #include <iostream>
 #include <queue>
