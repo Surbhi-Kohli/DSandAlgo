@@ -19,7 +19,7 @@ Sample Input
 Sample Output
 6 6
 
-
+Time Complexity:O(N)
 */
 #include <iostream>
 using namespace std;
