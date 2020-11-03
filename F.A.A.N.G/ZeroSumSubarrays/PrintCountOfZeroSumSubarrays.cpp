@@ -29,7 +29,7 @@ using namespace std;
 void tellNoOfZeroSumSubarray(int arr[],int n)
 {
 	int prefixSum[n+1];
-	prefixSum[0]=0;
+	prefixSum[0]=0;//Important step
 	for(int i=0;i<n;i++)
 	{
 		prefixSum[i+1]=prefixSum[i]+arr[i];
