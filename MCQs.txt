@@ -1,0 +1,24 @@
+1.If array data structure is used,then what is the time complexity of the following snippet of code?
+
+function(int n){
+
+if(n==1)
+return;
+for(int i=1;i<=n;i++){
+for(int j=1;j<=n;j++){
+printf("*");
+}
+}
+function(n-1);
+
+}
+a.O(n^2) b.O(n^3) c.O(nlogn) d.O(n^2logn)
+ans-O(n^3)
+EXPLANATION:T(N) = T(N-1) + O(N^2)
+That's because in every recursive step you call function with list of length N-1 (where N the current length) and also you do computations of total complexity O(N^2) (outer loop O(N) -just traversing list and inner loop traversing the hash map in O(N) -O(1) for each element and total N element, So the nested loops are overall O(N^2)).
+
+You can easily see:
+
+T(N) = T(N-1) + O(N^2) = T(N-2) + O(N^2) + O((N-1)^2) =...
+
+= O(n(n+1)(2n+1)/6) = O(n^3)
