@@ -12,14 +12,16 @@ There is no subset that add up to 30.
 
 To solve the problem in Pseudo-polynomial time use the Dynamic programming.
 
-So we will create a 2D array of size (arr.size() + 1) * (target + 1) of type boolean. The state DP[i][j] will be true if there exists a subset of elements from A[0….i] with sum value = ‘j’. The approach for the problem is:
+So we will create a 2D array of size (arr.size() + 1) * (target + 1) of type boolean. The state DP[i][j] will be true if there exists a subset of elements from A[0….i] 
+with sum value = ‘j’. The approach for the problem is:
 
 if (A[i] > j)
 DP[i][j] = DP[i-1][j]
 else 
 DP[i][j] = DP[i-1][j] OR DP[i-1][sum-A[i]]
 This means that if current element has value greater than ‘current sum value’ we will copy the answer for previous cases
-And if the current sum value is greater than the ‘ith’ element we will see if any of previous states have already experienced the sum=’j’ OR any previous states experienced a value ‘j – A[i]’ which will solve our purpose.
+And if the current sum value is greater than the ‘ith’ element we will see if any of previous states have already experienced the sum=’j’ OR any previous 
+states experienced a value ‘j – A[i]’ which will solve our purpose.
 The below simulation will clarify the above approach:
 
 set[]={3, 4, 5, 2}
