@@ -1,3 +1,66 @@
+/*Implementation without extra  couts*/
+/*Question: Given a set of "n" non-negative integers, and a value "sum", determine if there is a subset of the given set with sum equal to given sum.
+
+Input Format
+1st Line: n sum 2nd Line: a1 a2……an (Array Values)
+
+Constraints
+1<= n <= 1000
+1<= sum <= 10^5
+1<= Ai <=10^4
+
+Output Format
+Yes, if sum exist No, it sum does not exist
+
+Sample Input
+5 10
+1 2 3 4 5
+Sample Output
+Yes*/
+
+
+#include<iostream>
+using namespace std;
+bool subsetSum(int arr[],int n,int sum,int **dp)
+{
+	if(n==0)
+	return dp[n][sum]=0;
+	if(n!=0 && sum==0)
+	return dp[n][sum]=1;
+
+	if(dp[n][sum]!=-1)
+	return dp[n][sum];
+
+	else if(arr[n-1]>sum)
+	return dp[n][sum]=subsetSum(arr,n-1,sum,dp);
+
+	else
+	return dp[n][sum]=subsetSum(arr,n-1,sum,dp)||subsetSum(arr,n-1,sum-arr[n-1],dp);
+}
+int main() {
+	int n,sum;
+	cin>>n>>sum;
+	int arr[n];
+	for(int i=0;i<n;i++)
+	cin>>arr[i];
+
+	int **dp=new int*[n+1];
+	for(int i=0;i<=n;i++)
+	{
+		dp[i]=new int[sum+1];
+	}
+	for(int i=0;i<=n;i++)
+	{
+		for(int j=0;j<=sum;j++)
+		dp[i][j]=-1;
+	}
+	if(subsetSum(arr,n,sum,dp))
+	cout<<"Yes";
+	else
+	cout<<"No";
+	return 0;
+}
+
 /*
 for Input:
 6
