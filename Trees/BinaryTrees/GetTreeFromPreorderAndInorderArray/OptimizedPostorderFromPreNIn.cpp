@@ -39,6 +39,8 @@ Node *buildTree(int preorder[],int inorder[],int start,int end,unordered_map<int
     if(start>end)
     return NULL;
     Node* root=new Node(preorder[index++]);
+	if(start==end) 
+		return root; 
     int occurrence=mp[root->data];
     root->left=buildTree(preorder,inorder,start,occurrence-1,mp);
     root->right=buildTree(preorder,inorder,occurrence+1,end,mp);
