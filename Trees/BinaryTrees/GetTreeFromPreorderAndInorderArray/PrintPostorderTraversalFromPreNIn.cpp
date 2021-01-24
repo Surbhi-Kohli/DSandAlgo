@@ -10,6 +10,8 @@ Algorithm: buildTree()
 6) return tNode.
 Time Complexity:O(n^2);
 Worst case occurs when tree is left-skewed
+Example Preorder and Inorder traversals for worst case are {A, B, C, D} and {D, C, B, A}.
+In the left skewed tree,search operation will be costly as it will be applied on major part of inorder array.
 Input:
 5
 1 2 4 5 3
