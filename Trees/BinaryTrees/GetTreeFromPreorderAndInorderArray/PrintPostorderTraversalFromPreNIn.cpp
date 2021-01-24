@@ -50,6 +50,10 @@ Node *buildTree(int preorder[],int inorder[],int start,int end)
     if(start>end)
     return NULL;
     Node* root=new Node(preorder[index++]);
+	if(start==end)
+	{
+         return root;
+	}
     int occurrence=search(inorder,root->data,start,end);
     root->left=buildTree(preorder,inorder,start,occurrence-1);
     root->right=buildTree(preorder,inorder,occurrence+1,end);
