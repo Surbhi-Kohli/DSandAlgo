@@ -9,6 +9,8 @@ Algorithm: buildTree()
 5) Call buildTree for elements after inIndex and make the built tree as right subtree of tNode. 
 6) return tNode.
 Time Complexity:O(n^2);
+The above function visits every node in array. For every visit, it calls search which takes O(n) time.
+Therefore, overall time complexity of the function is O(n2)
 Worst case occurs when tree is left-skewed
 Example Preorder and Inorder traversals for worst case are {A, B, C, D} and {D, C, B, A}.
 In the left skewed tree,search operation will be costly as it will be applied on major part of inorder array.
