@@ -27,10 +27,36 @@ Expected Auxiliary Space: O(Height of the Tree).
 Constraints:
 1 <= Number of nodes <= 10000
 1 <= Data of a node <= 1000
+The below approach is better as it is bottom up-O(n)
 */
 #include <bits/stdc++.h>
 using namespace std;
-
+class Node{
+    
+    public:
+    int data;
+    Node *left;
+    Node *right;
+    Node(int d){
+         data=d;
+         left=NULL;
+         right=NULL;
+    }
+    
+};
+Node* buildTree(){
+    
+    int d;
+    cin>>d;
+  
+    if(d==-1)
+    return NULL;
+    
+    Node* root=new Node(d);
+    root->left=buildTree();
+    root->right=buildTree();
+    return root;
+}
 pair<int,int> calcDiameter(Node *root)
 {
     if(root==NULL)
@@ -50,4 +76,10 @@ int diameter(Node* root) {
     // Your code here
   pair<int,int> p= calcDiameter(root);
   return p.second;
+}
+int main(){
+       Node *root=new Node();
+       buildTree(root);
+       cout<<diameter(root);
+       return 0;
 }
