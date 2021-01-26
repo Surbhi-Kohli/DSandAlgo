@@ -23,13 +23,16 @@ Your Task:
 You need to complete the function diameter() that takes root as parameter and returns the diameter.
 
 Expected Time Complexity: O(N).
-Expected Auxiliary Space: O(Height of the Tree).
+.
 
 Constraints:
 1 <= Number of nodes <= 10000
 1 <= Data of a node <= 1000
 
-Naive Approach
+Naive Approach -> Time complexity=O(n^2).Thats because time complexity of height function is O(n) and
+we are calling height for each node.This method of calculating diameter is a preorderTraversal as we find values for root
+and then for left and right subtree
+
  */
  int height(Node *root)
 {
@@ -45,7 +48,23 @@ int diameter(Node* root) {
    int ans=max(op1,max(op2,op3));
   return ans;
 }
+Node* buildTree(){
+    
+    int d;
+    cin>>d;
+  
+    if(d==-1)
+    return NULL;
+    
+    Node* root=new Node(d);
+    root->left=buildTree();
+    root->right=buildTree();
+    return root;
+    
+    
+}
 int main()
 {
-
+ Node *root=buildTree();
+       cout<<diameter(root);
 }
