@@ -32,25 +32,35 @@ in right subtree is 30. Root element = 10
 which is not equal to 30+40.
 Below solution runs in O(n) time
 */
-int checkSumOfChildren(Node* root)
+pair<bool,int> checkIfSumTree(Node* root)
 {
     if(root==NULL)
-    return 0;
+    {
+        return {true,0};
+    }
     if(root->left==NULL && root->right==NULL)
-    return root->data;
-   return checkSumOfChildren(root->left)+checkSumOfChildren(root->right)+root->data;
-   
+    {
+        return {true,root->data};
+    }
+    pair<bool,int> a1=checkIfSumTree(root->left);
+    if(a1.first==true)
+    {
+        pair<bool,int> a2=checkIfSumTree(root->right);
+        if(a2.first==true)
+        {
+            if(a1.second+a2.second==root->data)
+            {
+                return {true,a1.second+a2.second+root->data};
+            }
+            else
+            return {false,-99};
+        }
+        else return {false,-99};
+    }
+    else return {false,-99};
 }
 bool isSumTree(Node* root)
 {
-     // Your code here
-     if(root==NULL)
-     return true;
-  int a1= checkSumOfChildren(root->left);
-  int a2= checkSumOfChildren(root->right);
-  if(root->data==a1+a2)
-    return true;
-    
-    return false;
-     
+    pair<bool,int> p= checkIfSumTree(root);
+    return p.first;
 }
