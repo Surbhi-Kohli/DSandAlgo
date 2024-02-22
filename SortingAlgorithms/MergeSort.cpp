@@ -125,7 +125,7 @@ void mergeSort(int arr[], int l, int r)
     if (l < r) 
     { 
         // Same as (l+r)/2, but avoids overflow for 
-        // large l and h 
+        // large l and r 
         int m = l+(r-l)/2; 
   
         // Sort first and second halves 
