@@ -3,8 +3,9 @@ Merge Sort
 Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two
 halves, calls itself for the two halves and then merges the two sorted halves. 
 The merge() function is used for merging two halves. 
-The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two 
-sorted sub-arrays into one. See following C implementation for details.
+The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are 
+sorted and merges the two sorted sub-arrays into one. 
+See following C implementation for details.
 
 MergeSort(arr[], l,  r)
 If r > l
@@ -33,7 +34,9 @@ Unlike an array, in the linked list,we can insert items in the middle in O(1)
 extra space and O(1) time. Therefore merge operation of merge sort can be implemented 
 without extra space for linked lists.In arrays, we can do random access as elements are 
 contiguous in memory. Let us say we have an integer (4-byte) array A and let the address of A[0]
-be x then to access A[i], we can directly access the memory at (x + i*4). Unlike arrays, we can not do random access in the linked list. Quick Sort requires a lot of this kind of access.
+be x then to access A[i], we can directly access the memory at (x + i*4). 
+Unlike arrays, we can not do random access in the linked list. Quick Sort requires a lot of 
+this kind of access.
 In linked list to access i’th index, we have to travel each and 
 every node from the head to i’th node as we don’t have a continuous block of memory.
 Therefore, the overhead increases for quicksort.
@@ -47,7 +50,8 @@ PROBLEM STATEMENT:
 Given an array A, of N elements. Sort the array using mergesort algorithm.
 
 Input Format
-A single integer, N, denoting the number of elements in array. Next line contains N integers, denoting the elements of array.
+A single integer, N, denoting the number of elements in array. Next line contains N integers, 
+denoting the elements of array.
 
 Constraints
 1<=N<=2*10^5 |Ai|<=10^9
