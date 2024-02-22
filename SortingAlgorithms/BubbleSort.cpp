@@ -8,7 +8,8 @@ Sorting In Place: Yes
 Stable: Yes
 Adaptive:Can be made adaptive (if array is sorted in asc order: we can signal with flag that no swap is done,in 1st pass itself,
          So Bubble Sort can be made adaptive)
-Usage of Kth Pass:In the Kth pass of bubble sort,we get the kth largest element of an array    
+Basic criteria to remember: Pushes the max to last by adjacent swaps	 
+Usage of Kth Pass:In the Kth pass of bubble sort,we get the kth largest element of an array  at its correct position
    
 Take as input N, the size of array. Take N more inputs and store that in an array. Write a function that bubble sorts the array.
 Print the elements of sorted array.
@@ -54,3 +55,19 @@ int main() {
    cout<<arr[i]<<endl;
 	return 0;
 }
+
+//Making the code adaptive:
+int swapped=0;
+ for(int i=0;i<n-1;i++)
+  { swapped=0;
+    for(int j=0;j<n-i-1;j++)
+    {
+      if(arr[j]>arr[j+1]){
+      swap(arr[j],arr[j+);
+	      swapped=1;
+      }
+    }
+	  if(swapped==0)
+           break;//no need to do further checks  since no swaps occured in this pass, that
+	  //this indicates that array is already sorted/ or has gotten sorted by now
+  }
