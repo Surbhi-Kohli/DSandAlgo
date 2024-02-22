@@ -1,8 +1,10 @@
 The problem of sorting can be viewed as following.
 Input: A sequence of n numbers <a1, a2, . . . , an>.
-Output: A permutation (reordering) <a‘1, a‘2, . . . , a‘n> of the input sequence such that a‘1 <= a‘2 ….. <= a‘n.
+Output: A permutation (reordering) <a‘1, a‘2, . . . , a‘n> of the input sequence such that 
+a‘1 <= a‘2 ….. <= a‘n.
 
-A sorting algorithm is comparison based if it uses comparison operators to find the order between two numbers.
+A sorting algorithm is comparison based if it uses comparison operators to find the order 
+between two numbers.
 Comparison sorts can be viewed abstractly in terms of decision trees. A decision tree is a full binary tree 
 that represents the comparisons between elements that are performed by a particular sorting algorithm operating
 on an input of a given size. The execution of the sorting algorithm corresponds to tracing a path from the root
@@ -29,5 +31,6 @@ After combining the above two facts, we get following relation.
 
  Since log2(n!)  = Θ(nLogn),  we can say
       x = Ω(nLog2n)
-Therefore, any comparison based sorting algorithm must make at least nLog2n comparisons to sort the input array, 
+Therefore, any comparison based sorting algorithm must make at least nLog2n comparisons
+to sort the input array, 
 and Heapsort and merge sort are asymptotically optimal comparison sorts.
