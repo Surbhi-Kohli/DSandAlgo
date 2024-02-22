@@ -1,7 +1,7 @@
 /*
 Insertion Sort-
-Best Case Complexity - O(N)->.Case in which the first remaining element of the input is only compared with the right-most element of the
-sorted subsection of array.
+Best Case Complexity - O(N)->.Case in which the first remaining element of the input is only 
+compared with the right-most element of the sorted subsection of array.
 Worst Case- O(n^2); (When array is sorted in descending order)
 Adaptive-yes
 Auxiliary Space - O(1) [Insertion Sort is in place i.e only requires constant amoumt O(1) of additional memory]
