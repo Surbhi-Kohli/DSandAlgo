@@ -22,6 +22,7 @@ To shuffle an array a of n elements (indices 0..n-1):
        exchange a[j] and a[i]
 
 */
+/*Code in C++
 #include <iostream> 
 #include<cstdlib>
 using namespace std; 
@@ -55,6 +56,7 @@ for(int i=0;i<7;i++)
 cout<<arr[i]<<", ";
 	return 0; 
 } 
+*/
 /*
 The above function assumes that rand() generates a random number.
 
