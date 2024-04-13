@@ -89,3 +89,53 @@ const twoSum = (array, goal) => {
 let arr = [2, 6, 5, 8, 11];
 console.log(twoSum(arr,16));
 ```
+Time Complexity: O(N), where N = size of the array.
+Space Complexity: O(N) as we use the map data structure.
+Note: We have optimized this problem enough. But if in the interview, we are not allowed to use the map data structure, then we should move on to the following approach i.e. two pointer approach. 
+
+### Optimized Approach(using two-pointer): 
+
+Intuition: In this approach, we will first sort the array and will try to choose the numbers in a greedy way.
+
+We will keep a left pointer at the first index and a right pointer at the last index. Now until left < right, we will check the sum of arr[left] and arr[right]. Now if the sum < target, we need bigger numbers and so we will increment the left pointer. But if sum > target, we need to consider lesser numbers and so we will decrement the right pointer. 
+
+If sum == target we will return either “YES” or the indices as per the question.
+But if the left crosses the right pointer, we will return “NO” or {-1, -1}.
+
+Approach:
+
+The steps are the following:
+
+We will sort the given array first.
+Now, we will take two pointers i.e. left, which points to the first index, and right, which points to the last index.
+Now using a loop we will check the sum of arr[left] and arr[right] until left < right.
+If arr[left] + arr[right] > sum, we will decrement the right pointer.
+If arr[left] + arr[right] < sum, we will increment the left pointer.
+If arr[left] + arr[right] == sum, we will return the result.
+Finally, if no results are found we will return “No” or {-1, -1}.
+
+
+```
+
+function twoSumWithSort(n, arr, target) {
+    arr.sort();
+    let left = 0, right = n - 1;
+    while (left < right) {
+        let sum = arr[left] + arr[right];
+        if (sum == target) {
+            return "YES";
+        }
+        else if (sum < target) left++;
+        else right--;
+    }
+    return "NO";
+}
+let arr = [2, 6, 5, 8, 11];
+console.log(twoSumWithSort(5,arr,16));//Yes
+```
+
+Time Complexity: O(N) + O(N*logN), where N = size of the array.
+Reason: The loop will run at most N times. And sorting the array will take N*logN time complexity.
+
+Space Complexity: O(1) as we are not using any extra space.
+
