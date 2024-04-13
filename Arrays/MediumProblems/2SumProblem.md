@@ -89,6 +89,32 @@ const twoSum = (array, goal) => {
 let arr = [2, 6, 5, 8, 11];
 console.log(twoSum(arr,16));
 ```
+### Code in CPP
+
+```
+#include <bits/stdc++.h> 
+using namespace std; 
+void printPairs(int arr[], int n, int sum) 
+{ 
+    // Store counts of all elements in map m 
+    unordered_map<int, int> m; 
+  
+    // Traverse through all elements 
+    for (int i = 0; i < n; i++) { 
+  
+        // Search if a pair can be formed with 
+        // arr[i]. 
+        int rem = sum - arr[i]; 
+        if (m.find(rem) != m.end()) { 
+           
+                cout << "(" << rem << ", "
+                     << arr[i] << ")" << endl; 
+        } 
+        m[arr[i]]++; 
+    } 
+} 
+
+```
 Time Complexity: O(N), where N = size of the array.
 Space Complexity: O(N) as we use the map data structure.
 Note: We have optimized this problem enough. But if in the interview, we are not allowed to use the map data structure, then we should move on to the following approach i.e. two pointer approach. 
