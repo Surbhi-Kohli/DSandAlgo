@@ -77,4 +77,23 @@ The probability of ith element going to second position = (probability that ith 
 not picked in previous iteration) x (probability that ith element is picked in this iteration)
 So the probability = ((n-1)/n) x (1/(n-1)) = 1/n
 */
- 
+
+
+ function randomShuffleArray(arr){
+ for(let i=arr.length-1;i>0;i--)
+    {
+    let randomNum= Math.ceil(Math.random()*(i+1));
+    console.log(randomNum);
+   let temp=arr[i];
+   arr[i]=arr[randomNum];
+   arr[randomNum]=temp;
+   console.log(arr);
+    }
+    return arr;
+    }
+    
+    console.log(randomShuffleArray([1,2,3,4,5]));
+
+/*
+https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
+*/
