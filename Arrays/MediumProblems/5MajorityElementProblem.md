@@ -2,7 +2,7 @@
 
 Problem Statement: Given an array of N integers, write a program to return an element that occurs more than N/2 times in the given array. [[  You may consider that such an element always exists in the array.]] 
 
-_Example 1_:
+*_Example 1_*:
 Input Format : N = 3, nums[] = [3,2,3] 
 Result : 3  
 Explanation : When we just count the occurrences of each number and compare with half of the size of the array, you will get 3 for the above solution. 
@@ -31,17 +31,44 @@ Use a better data structure to reduce the number of look-up operations and hence
 and again - so we have to reduce that also.
 
 #### Approach: 
-     *  Use a hashmap and store as (key, value) pairs. (Can also use frequency array based on the  
-        size of nums) 
-     *  Here the key will be the element of the array and the value will be the number of times it 
-        occurs. 
-     *  Traverse the array and update the value of the key. Simultaneously check if the value is 
-        greater than the floor of N/2. 
-        * If yes, return the key 
-        * Else iterate forward.  
+    * Use a hashmap and store as (key, value) pairs. (Can also use frequency array based on the  
+      size of nums) 
+    * Here the key will be the element of the array and the value will be the number of times it 
+      occurs. 
+    * Traverse the array and update the value of the key. Simultaneously check if the value is 
+      greater than the floor of N/2. 
+       * If yes, return the key 
+       * Else iterate forward.  
         
 #### Code:
 
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    let mp= new Map();
+    if(nums.length==1)
+    return nums[0];
+  for(let i=0;i<nums.length;i++){
+  
+    if(!mp.has(nums[i])){
+       mp.set(nums[i],1);
+    }
+    else{
+        let val= mp.get(nums[i]);
+      
+        mp.set(nums[i],val+1);
+        if(val+1 > nums.length/2)
+        return nums[i];
+    }
+  }
+  return -1;
+   
+};
+
+```
 
 #### Complexity Analysis:
 Time Complexity: O(N*logN) + O(N), where N = size of the given array.
