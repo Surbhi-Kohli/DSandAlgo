@@ -1,5 +1,5 @@
-/*
-Merge Sort
+
+## Merge Sort
 Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two
 halves, calls itself for the two halves and then merges the two sorted halves. 
 The merge() function is used for merging two halves. 
@@ -64,7 +64,8 @@ Sample Input
 3 6 4 1 2
 Sample Output
 1 2 3 4 6
-*/
+
+```
 #include<iostream>
 using namespace std;
 void merge(int arr[], int l, int m, int r) 
@@ -150,5 +151,66 @@ int main() {
 	}
 	return 0;
 }
+```
 
+Code in JS:
+
+```
+function merge(nums,low,mid,high){
+   
+let rightLow= mid+1;
+let ans=[];
+let lowerlimit= low;
+
+while(low<=mid && rightLow<=high){
+    if(nums[low]<=nums[rightLow]){
+      ans.push(nums[low]);
+      low++
+    }
+    else{
+     ans.push(nums[rightLow]);
+     rightLow++
+    }
+}  
+
+    while(low<=mid){
+        ans.push(nums[low]);
+      low++ 
+    }
+    while(rightLow<=high){
+         ans.push(nums[rightLow]);
+     rightLow++
+    }
+   
+   for(let i=lowerlimit;i<=high;i++){
+   
+    
+    nums[i]= ans[i-lowerlimit]
+   
+   }
+   
+ 
+}
+function mergeSort(nums,low,high){
+
+if(low<high){
+    let mid= Math.floor(low+(high-low)/2);
+
+    mergeSort(nums,low,mid);
+    mergeSort(nums,mid+1,high);
+    merge(nums,low,mid,high);
+}
+return nums;
+}
+
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArray = function(nums) {
+   
+    return mergeSort(nums,0,nums.length-1)
+};
+```
 
