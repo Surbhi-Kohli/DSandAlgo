@@ -48,17 +48,17 @@ data sequentially and the need of random access is low.
 Inversion Count Problem
 Used in External Sorting        
              
-PROBLEM STATEMENT:
+#### PROBLEM STATEMENT:
 Given an array A, of N elements. Sort the array using mergesort algorithm.
 
-Input Format
+#### Input Format
 A single integer, N, denoting the number of elements in array. Next line contains N integers, 
 denoting the elements of array.
 
-Constraints
+#### Constraints
 1<=N<=2*10^5 |Ai|<=10^9
 
-Output Format
+#### Output Format
 Print in a single line, N spaced integers, denoting the elements of array A in sorted order.
 
 Sample Input
