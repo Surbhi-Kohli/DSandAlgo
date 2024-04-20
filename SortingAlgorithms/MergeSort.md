@@ -184,11 +184,8 @@ while(low<=mid && rightLow<=high){
      rightLow++
     }
    
-   for(let i=lowerlimit;i<=high;i++){
-   
-    
-    nums[i]= ans[i-lowerlimit]
-   
+   for(let i=lowerlimit;i<=high;i++){ 
+    nums[i]= ans[i-lowerlimit];
    }
    
  
