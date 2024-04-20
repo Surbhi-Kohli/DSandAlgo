@@ -8,8 +8,8 @@ sorted and merges the two sorted sub-arrays into one.
 See following C implementation for details.
 
 MergeSort(arr[], l,  r)
-If r > l  
-
+  
+  If r > l  
      1. Find the middle point to divide the array into two halves:    
              middle m = (l+r)/2 
      2. Call mergeSort for first half:    
