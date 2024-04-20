@@ -20,7 +20,7 @@ See following C implementation for details.
 	             Call merge(arr, l, m, r)
 	         
 #### Auxiliary Space: O(n)
-#### Time Complexity: O(nLog<kbd>2</kbd>n) 
+#### Time Complexity: O(nLog<kbd>2</kbd>n) where the merge takes O(n) and the divide part takes O(log<kbd>2</kbd>n) as we are diving the array in 2 halves in each recursion
 <img width="756" alt="Screenshot 2024-04-20 at 9 39 19 PM" src="https://github.com/Surbhi-Kohli/DSandAlgo/assets/32058209/2419308b-f765-44c0-a6e7-5fd7e684a6ed">
 
 Algorithmic Paradigm: Divide and Conquer
