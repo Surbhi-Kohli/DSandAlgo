@@ -62,7 +62,7 @@ take the difference and maintain it in maxProfit, otherwise update the minimum.
   compare and maintain it in maxPro.
 * Return the maxPro.
 
-  ```
+```
 function maxProfit(arr) {
     let maxProfit = 0;
     let n = arr.length;
